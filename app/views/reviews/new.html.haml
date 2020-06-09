@@ -1,0 +1,6 @@
+= form_with(model: @review, local: true) do |form|
+  %h1 Create Review
+  = form.file_field :image
+  = form.text_field :title, placeholder: 'title'
+  = form.text_area  :content, placeholder: 'write a review'
+  = form.submit 'Done'
