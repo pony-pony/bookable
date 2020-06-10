@@ -1,0 +1,243 @@
+@keyframes block-appear {
+  0% {
+    left: 0;
+    width: 0%;
+  }
+  50% {
+    left: 0;
+    width: 100%;
+  }
+  100% {
+    left: 0;
+    width: 0%;
+  }
+}
+
+@keyframes image-appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+* {
+  box-sizing: 0;
+}
+
+.Body {
+  font-family: 'Poppins';
+  background: #857f67;
+  color: #fff;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  .Wrapper {
+    .Navbar {
+      display: flex;
+      justify-content: space-between;
+      height: 80px;
+      align-items: center;
+      padding: 0 20px;
+      .Title {
+        margin-right: 100px;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-weight: 600;
+      }
+      .Categories {
+        margin-right: auto;
+        ul {
+          a {
+            text-decoration: none;
+            color: #fff;
+          }
+          li {
+            display: inline-block;
+            padding: 0 30px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+          }
+        }
+      }
+      .Menu {
+        margin-right: 50px;
+      }
+    }
+    .Media {
+      position: absolute;
+      top: 350px;
+      right: -90px;
+      transform: rotate(-90deg);
+      ul {
+        li {
+          display: inline-block;
+          padding: 0 20px;
+          font-size: 10px;
+          font-weight: 500;
+          letter-spacing: 1px;
+        }
+      }
+    }
+    .ImgWrapper01 {
+      position: absolute;
+      top: 120px;
+      left: 200px;
+      .Img01 {
+        background: image-url('image05.jpg') no-repeat;
+        background-position: 50%;
+        background-size: cover;
+        height: 500px;
+        width: 350px;
+
+        opacity: 0;
+        animation: image-appear 0.0001s linear forwards;
+        animation-delay: 2s;
+      }
+      .Block {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: rgb(126, 120, 97);
+        animation: block-appear 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        animation-delay: 1s;
+      }
+    }
+    .ImgWrapper02 {
+      position: absolute;
+      top: 0px;
+      left: 650px;
+      .Img02 {
+        background: image-url('image02.jpg') no-repeat;
+        background-position: 50%;
+        background-size: cover;
+        height: 100vh;
+        width: 650px;
+
+        opacity: 0;
+        animation: image-appear 0.0001s linear forwards;
+        animation-delay: 1.6s;
+      }
+      .Block {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        background: rgb(126, 120, 97);
+        animation: block-appear 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+        animation-delay: 1.2s;
+      }
+    }
+    .Text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      white-space: nowrap;
+      h1 {
+        font-size: 120px;
+        font-family: 'Tinos';
+        font-weight: lighter;
+        letter-spacing: 5px;
+      }
+      p {
+        font-size: 30px;
+        font-family: 'Tinos';
+        text-transform: uppercase;
+        letter-spacing: 5px;
+        font-weight: lighter;
+      }
+    }
+    .Desc {
+      position: absolute;
+      left: 200px;
+      bottom: 70px;
+      display: flex;
+      ul {
+        margin-right: 50px;
+        li {
+          font-size: 10px;
+          letter-spacing: 1px;
+          font-weight: 500;
+          border-bottom: 1px solid #fff;
+          margin-bottom: 10px;
+        }
+      }
+      p {
+        width: 250px;
+        font-size: 10px;
+        font-weight: 300;
+        line-height: 2;
+      }
+    }
+    .Scrolldown {
+      font-size: 10px;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      position: absolute;
+      bottom: 110px;
+      left: -60px;
+      transform: rotate(-90deg);
+    }
+    .Scrolldown::before {
+      content: "";
+      border: 1px solid #fff;
+      width: 100px;
+      margin-bottom: 0 20px 0 0;
+      transform: translateY(-3px);
+      opacity: .5;
+      display: inline-block;
+    }
+    .Bottomnav {
+      position: absolute;
+      bottom: 30px;
+      right: 50px;
+      .Next {
+        font-size: 10px;
+        letter-spacing: 8px;
+        font-weight: 500;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+      }
+      .Next::after {
+        content: "";
+        display: inline-block;
+        border: 1px solid #fff;
+        width: 148px;
+        margin: 0 0 0 20px;
+        transform: translateY(-3px);
+      }
+      .Nav {
+        display: flex;
+        .Bottomnav-img {
+          background: image-url('bottomnav-img.jpg') no-repeat;
+          background-position: 50%;
+          background-size: cover;
+          height: 200px;
+          width: 300px;
+        }
+      }
+      ul {
+        background-color: #fff;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        li {
+          padding: 30px 20px;
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}
+
+
+

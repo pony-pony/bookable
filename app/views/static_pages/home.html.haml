@@ -1,3 +1,44 @@
-%h1 StaticPages#home
-= link_to("signup", new_user_registration_path)
-= link_to("signin", new_user_session_path)
+.Body
+  .Wrapper
+    .Navbar
+      .Title
+        bookable
+      .Categories
+        %ul
+          %li 
+            = link_to('signup', new_user_registration_path)
+          %li 
+            = link_to('login', new_user_session_path)
+      
+    .Media
+      %ul
+        %li facebook
+        %li Twitter
+        %li Instagram
+    .ImgWrapper01
+      .Img01
+      .Block
+    .ImgWrapper02
+      .Img02
+      .Block
+    .Text
+      %h1 
+        %span.Hidetext The Great Tips
+      %p 
+        %span.Hidetext knowledge for better life
+    .Desc
+      %ul
+        %li Volume01
+        %li Volume02
+      %p Books are the quietest and most constant of friends; they are the most accessible and wisest of counselors, and the most patient of teachers.
+    .Scrolldown 
+      scroll down
+    .Bottomnav
+      .Next up next
+      .Nav
+        %ul
+          %li
+            = icon('fas', 'angle-up')
+          %li
+            = icon('fas', 'angle-down')
+        .Bottomnav-img
