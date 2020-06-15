@@ -1,6 +1,12 @@
-= form_with(model: @review, local: true) do |form|
-  %h1 Create Review
-  = form.file_field :image
-  = form.text_field :title, placeholder: 'title'
-  = form.text_area  :content, placeholder: 'write a review'
-  = form.submit 'Done'
+.NewReview
+  .Content
+    = form_with(model: @review, local: true) do |form|
+      %h1.Introduction Create Review
+      .FormField
+        .FirstRow
+          = form.label :image, class: 'Form-image' do
+            = icon('fas', 'image', class: 'image-icon')
+            = form.file_field :image, class: 'Hidden'
+          = form.text_field :title, placeholder: 'title', class: 'Title'
+        = form.text_area  :content, placeholder: 'write a review', class: 'Text'
+        = form.submit 'Done', class: 'btn'

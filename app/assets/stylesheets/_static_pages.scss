@@ -26,13 +26,13 @@
 }
 
 .Body {
-  font-family: 'Poppins';
-  background: #857f67;
-  color: #fff;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
   .Wrapper {
+    font-family: 'Poppins';
+    background: rgb(133, 127, 103);
+    color: #fff;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
     .Navbar {
       display: flex;
       justify-content: space-between;
