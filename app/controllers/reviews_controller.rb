@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
   before_action :move_to_signin
   def index
     @reviews = Review.all
+    @like = Like.new
   end
 
   def new
@@ -17,6 +18,10 @@ class ReviewsController < ApplicationController
       render :new
     end
 
+  end
+
+  def show
+    @review = Review.find_by(id: params[:id])
   end
 
   private

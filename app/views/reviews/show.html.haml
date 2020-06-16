@@ -1,0 +1,10 @@
+.ShowReview
+  .ImageHeader
+    = image_tag "#{@review.image}", class: 'sImage'
+    = link_to reviews_path do
+      = icon('fas', 'arrow-alt-circle-left', class: 'Back')
+  .MainContent
+    .Title
+      = @review.title
+    .Content
+      = safe_join(@review.content.split("\n"),tag(:br))
