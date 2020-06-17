@@ -1,0 +1,47 @@
+.ShowLike {
+  width: 100%;
+  height: 100vh;
+  background: image-url('image10.jpg');
+  background-size: cover;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: overlay;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-y: scroll;
+  .Name {
+    color: white;
+    font-family: 'Tinos';
+    font-size: 50px;
+    letter-spacing: 2px;
+    padding: 50px 0;
+  }
+  .Tag {
+    width: 70%;
+    border-radius: 5px;
+    padding: 5px;
+    color: black;
+    margin: 10px;
+    display: flex;
+    background-color: rgb(133, 127, 103);
+    .Image {
+      width: 80px;
+      margin-left: 40px;
+    }
+    .Title {
+      width: 70%;
+      font-size: 40px;
+      font-family: 'Tinos';
+      color: black;
+      .Lnk {
+        line-height: 125px;
+        text-align: center;
+        display: block;
+        color: white;
+      }
+    }
+  }
+}
+.ShowLike::-webkit-scrollbar {
+  display: none;
+}

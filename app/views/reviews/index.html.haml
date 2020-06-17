@@ -8,12 +8,12 @@
         = link_to review_path(review) do
           = image_tag "#{review.image}", class: 'Image'
       .NopeBtn
-        = link_to '#' do
+        = link_to nope_reviews_path do
           = icon('fas', 'times', class: 'Times')
 .LinkBtns
   = link_to new_review_path do
     = icon('fas', 'pen-nib', class: 'Lnk')
   = link_to destroy_user_session_path, method: :delete do
     = icon('fas', 'sign-out-alt', class: 'Lnk')
-  = link_to "#" do
+  = link_to likes_path do
     = icon('fas', 'heart', class: 'Lnk sHeart')

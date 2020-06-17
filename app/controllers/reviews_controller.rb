@@ -2,7 +2,8 @@ class ReviewsController < ApplicationController
   before_action :authenticate_user!
   before_action :move_to_signin
   def index
-    @reviews = Review.all
+    # @reviews = Review.all
+    @reviews = Review.order("RAND()").limit(1)
     @like = Like.new
   end
 
@@ -22,6 +23,10 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find_by(id: params[:id])
+  end
+
+  def nope
+    redirect_to reviews_path
   end
 
   private

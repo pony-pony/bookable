@@ -1,0 +1,11 @@
+
+.ShowLike
+  %h1.Name LIKES
+  - @likes.each do |like|
+  - review = Review.find_by(id: like.review_id)
+    .Tag
+      = link_to review_path(review) do
+        = image_tag "#{review.image}", class: 'Image'
+      .Title
+        -# = review.title
+        = link_to(review.title, review_path(like.review_id), class: 'Lnk') 
