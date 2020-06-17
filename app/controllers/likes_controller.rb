@@ -10,6 +10,12 @@ class LikesController < ApplicationController
     @like = current_user.likes.create(like_params)
     redirect_to reviews_path
   end
+
+  def destroy
+    @like = Like.find_by(like_params, user_id: current_user.id)
+    @like.destroy
+    redirect_to likes_path
+  end
   private
   def set_review
     @review = Review.find(params[:review_id])

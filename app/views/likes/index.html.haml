@@ -1,6 +1,8 @@
 
 .ShowLike
   %h1.Name LIKES
+  = link_to reviews_path do 
+    = icon('fas', 'arrow-alt-circle-left', class: 'Back')
   - @likes.each do |like|
   - review = Review.find_by(id: like.review_id)
     .Tag
@@ -9,3 +11,6 @@
       .Title
         -# = review.title
         = link_to(review.title, review_path(like.review_id), class: 'Lnk') 
+      .DeleteBtn
+        = link_to review_like_path(review, like), method: :delete do
+          = icon('fas', 'times', class: 'D-icon')
