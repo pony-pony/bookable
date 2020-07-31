@@ -29,7 +29,7 @@
 
 
 ## テーブル
-#### users table
+### users table
 |Column|Type|Options|
 |------|----|-------|
 |username|string|null: false|
@@ -37,11 +37,11 @@
 |last_name|string|null: false|
 |email|string|null: false, unique: false|
 
-##### Association
+#### Association
 - has_many reviews
 - has_many comments
 
-#### reviews table
+### reviews table
 |Column|Type|Options|
 |------|----|-------|
 |title|string|null: false|
@@ -49,17 +49,17 @@
 |image|string||
 |user_id|integer|null: false, foreign_key: true|
 
-##### Association
+#### Association
 - has_many commemts
 - belongs_to user
 
-#### comments table
+### comments table
 |Column|Type|Options|
 |------|----|-------|
 |body|text||
 |user_id|integer|null: false, foreign_key: true|
 |review_id|integer|null: false, foreign_key: true|
 
-##### Association
+#### Association
 - belongs_to user
 - belongs_to review
