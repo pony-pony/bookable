@@ -1,4 +1,4 @@
-![bookable (1)](https://user-images.githubusercontent.com/64963869/88995019-a0e70700-d324-11ea-9c89-4d7f96d5ccdb.png)
+<img src="https://user-images.githubusercontent.com/64963869/88995019-a0e70700-d324-11ea-9c89-4d7f96d5ccdb.png" width="100%">
 
 
 ## 概要
