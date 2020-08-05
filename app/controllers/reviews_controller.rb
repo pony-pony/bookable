@@ -23,6 +23,8 @@ class ReviewsController < ApplicationController
 
   def show
     @review = Review.find_by(id: params[:id])
+    @comment = Comment.new
+    @comments = @review.comments.includes(:user)
   end
 
   def nope

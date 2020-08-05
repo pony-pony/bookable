@@ -6,12 +6,21 @@
       = image_tag "#{@review.image}", class: 'sImage'
       = link_to reviews_path do
         = icon('fas', 'arrow-alt-circle-left', class: 'Back')
+      = link_to review_likes_path(@review), method: :post do
+        = icon('fas', 'heart', class: 'Heart')
   .RightColumn
     .Title
       = @review.title
     .Content
       = safe_join(@review.content.split("\n"),tag(:br))
     .Review
+      - @comments.each do |comment|
+        = comment.user.username
+        = comment.text
+
+      = form_with(model: [@review, @comment], local: true, url: "/reviews/#{@review.id}/comments") do |f|
+        = f.text_area :text, placeholder: 'write a comment'
+        = f.submit 'Done'
 
   -# .ImageHeader
   -#   = @review.user.name
