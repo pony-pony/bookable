@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root to: 'static_pages#home'
   devise_for :users
   resources :users
+  resources :comments, only: [:index]
   resources :likes, only: :index
   resources :relationships, only: [:create, :destroy]
   resources :reviews, only: [:index, :new, :create, :show] do
@@ -10,5 +11,6 @@ Rails.application.routes.draw do
       get :nope
     end
     resources :likes, only: [:create, :destroy]
+    resources :comments, only: [:create]
   end
 end
