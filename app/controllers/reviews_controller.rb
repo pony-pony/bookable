@@ -31,6 +31,10 @@ class ReviewsController < ApplicationController
     redirect_to reviews_path
   end
 
+  def search
+    @reviews = Review.search(params[:keyword])
+  end
+
   private
   def review_params
     params.require(:review).permit(:title, :content, :image).merge(user_id: current_user.id)

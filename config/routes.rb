@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :reviews, only: [:index, :new, :create, :show] do
     collection do
       get :nope
+      get :search
     end
     resources :likes, only: [:create, :destroy]
     resources :comments, only: [:create]
