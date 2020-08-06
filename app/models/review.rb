@@ -12,4 +12,12 @@ class Review < ApplicationRecord
   def liked_by(user)
     Like.find_by(user_id: user.id, review_id: id)
   end
+
+  def self.search(search)
+    if search
+      Review.where('title LIKE(?)', "%#{search}%")
+    else
+      Review.all
+    end
+  end
 end
