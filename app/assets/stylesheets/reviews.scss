@@ -9,8 +9,25 @@ a {
   background-color: rgba(0, 0, 0, 0.8);
   background-blend-mode: overlay;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  .SearchField {
+    
+    #keyword {
+      height: 35px;
+      width: 300px;
+      padding-left: 10px;
+    }
+    .search-btn {
+      border: none;
+      padding: 7px;
+      width: 100px;
+      background-color: #857f67;
+      color: white;
+      border-radius: 2px;
+    }
+  }
   .SlideMain {
     display: flex;
     justify-content: space-around;
