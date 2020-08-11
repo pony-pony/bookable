@@ -1,34 +1,28 @@
 .ShowReview
   .LeftColumn
     .Username
-      = link_to "#{@review.user.username}", user_path(@review.user.id)
+      %span Writer of this review: 
+      = link_to "#{@review.user.username}", user_path(@review.user.id), class: "user-btn"
     .BookCover
-      = image_tag "#{@review.image}", class: 'sImage'
+      = image_tag "#{@review.image}", class: 'sImage', width: '100%'
+    .ActionBtns
       = link_to reviews_path do
         = icon('fas', 'arrow-alt-circle-left', class: 'Back')
       = link_to review_likes_path(@review), method: :post do
         = icon('fas', 'heart', class: 'Heart')
   .RightColumn
-    .Title
-      = @review.title
-    .Content
-      = safe_join(@review.content.split("\n"),tag(:br))
+    .RightMain
+      .Title
+        = @review.title
+      .Content
+        = safe_join(@review.content.split("\n"),tag(:br))
     .Review
-      - @comments.each do |comment|
-        = comment.user.username
-        = comment.text
-
-      = form_with(model: [@review, @comment], local: true, url: "/reviews/#{@review.id}/comments") do |f|
-        = f.text_area :text, placeholder: 'write a comment'
-        = f.submit 'Done'
-
-  -# .ImageHeader
-  -#   = @review.user.name
-  -#   = image_tag "#{@review.image}", class: 'sImage'
-  -#   = link_to reviews_path do
-  -#     = icon('fas', 'arrow-alt-circle-left', class: 'Back')
-  -# .MainContent
-  -#   .Title
-  -#     = @review.title
-  -#   .Content
-  -#     = safe_join(@review.content.split("\n"),tag(:br))
+      .Comments
+        - @comments.each do |comment|
+          .Comment
+            = "#{comment.user.username}: "
+            = comment.text
+      .ActionForms
+        = form_with(model: [@review, @comment], local: true, url: "/reviews/#{@review.id}/comments") do |f|
+          = f.text_area :text, placeholder: 'write a comment'
+          = f.submit 'Done'

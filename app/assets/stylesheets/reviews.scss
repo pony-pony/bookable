@@ -169,50 +169,155 @@ a {
 }
 
 // show review
-// .ShowReview {
-//   width: 100%;
-//   height: 100vh;
-//   display: flex;
-//   background: image-url('image09.jpg');
-//   background-color: rgba(0, 0, 0, 0.8);
-//   background-size: cover;
-//   background-blend-mode: overlay;
-//   .ImageHeader {
-//     width: 40%;
-//     height: 100vh;
-//     position: relative;
-//     .sImage {
-//       width: 80%;
-//       height: 80%;
-//       object-fit: cover; 
-//       position: absolute;
-//       left: 30px;
-//       top: 30px;
-//     }
-//     .Back {
-//       color: white;
-//       font-size: 50px;
-//       position: absolute;
-//       bottom: 30px;
-//       left: 30px;
-//     }
-//   }
-//   .MainContent {
-//     margin: 30px;
-//     width: 60%;
-//     color: white;
-//     overflow-y: scroll;
-//     .Title {
-//       font-size: 70px;
-//       font-family: 'Tinos';
-//       letter-spacing: 1px;
-//       margin-bottom: 50px;
-//     }
-//     .Content {
-//       font-size: x-large;
-//     }
-//   }
-//   .MainContent::-webkit-scrollbar {
-//     display: none;
-//   }
-// }
+.ShowReview {
+  a {
+    color: white;
+  }
+  display: flex;
+  height: 100vh;
+  background: image-url('image08.jpg') no-repeat;
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: overlay;
+  background-size: cover;
+  color: white;
+  .LeftColumn {
+    width: 30%;
+    padding: 30px 10px 0 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    .Username {
+      font-family: 'Times New Roman', Times, serif;
+      margin-bottom: 20px;
+      .user-btn {
+        color: #857f67;
+      }
+    }
+    .BookCover {
+      margin-bottom: 20px;
+    }
+    .ActionBtns {
+      font-size: 40px;
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .RightColumn {
+    height: 100vh;
+    width: 70%;
+    // padding: 20px 10px 0 10px;
+    .RightMain {
+      height: 75vh;
+      margin-top: 20px;
+      .Title {
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 40px;
+        letter-spacing: 1px;
+        padding-bottom: 10px;
+        padding-top: 10px;
+        border-bottom: 1px white solid;
+      }
+      .Content {
+        height: calc(100% - 100px);
+        margin-top: 20px;
+        font-size: 20px;
+        line-height: 45px;
+        overflow-y: scroll;
+        display: block;
+      }
+      .Content::-webkit-scrollbar {
+        display: none;
+      }
+    }
+    .Review {
+      height: 20vh;
+      .Comments {
+        border-top: 1px white solid;
+        height: 100px;
+        overflow-y: scroll;
+        display: block;
+      }
+      .Comments::-webkit-scrollbar {
+        display: none;
+      }
+      .ActionForms {
+        margin-top: 20px;
+        height: 50px;
+        width: 100%;
+        form {
+          height: 50px;
+          width: 100%;
+          display: flex;
+        }
+        #comment_text {
+          resize: none;
+          height: 48px;
+          width: 80%;
+          margin-right: 5px;
+          padding: 0 10px;
+          line-height: 48px;
+        }
+        input {
+          width: 20%;
+          height: 50px;
+          border: none;
+          border-radius: 3px;
+          background-color: #857f67;
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.SearchReview {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background: image-url('image06.jpg');
+  background-color: rgba(0, 0, 0, 0.8);
+  background-blend-mode: overlay;
+  .SearchField {
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    #keyword {
+      height: 35px;
+      width: 300px;
+      padding-left: 10px;
+    }
+    .search-btn {
+      border: none;
+      padding: 7px;
+      width: 100px;
+      background-color: #857f67;
+      color: white;
+      border-radius: 2px;
+    }
+  }
+  .Contents {
+    height: 80vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
+    .result-box {
+      width: 80%;
+      height: 140px;
+      border-radius: 5px;
+      background-color: #857f67;
+      color: white;
+      line-height: 140px;
+      text-align: center;
+      font-family: 'Times New Roman', Times, serif;;
+      font-size: 45px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+  .Contents::-webkit-scrollbar {
+    display: none;
+  }
+}
